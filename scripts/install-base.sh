@@ -39,8 +39,8 @@ sudo sh -c "echo 'Package: *'>/etc/apt/preferences.d/kali.pref; echo 'Pin: relea
 
 sudo apt update
 
-sudo echo "aptitude -t kali-rolling \$@" > /usr/bin/apt-kali ; sudo chmod +x /usr/bin/apt-kali
-sudo echo "aptitude -t bookworm \$@" > /usr/bin/apt-deb ; sudo chmod +x /usr/bin/apt-deb
+sudo su -c ' echo "aptitude -t kali-rolling \$@" > /usr/bin/apt-kali ' ; sudo chmod +x /usr/bin/apt-kali
+sudo su -c ' echo "aptitude -t bookworm \$@" > /usr/bin/apt-deb ' ; sudo chmod +x /usr/bin/apt-deb
 
 #Para instalar:
 #apt-kali install PACKAGE-NAME
@@ -54,7 +54,7 @@ sudo apt-kali install nmap exploitdb wordlists hydra john burpsuite zaproxy meta
 # Instalar fuentes para kitty
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
 sudo mkdir -p /usr/share/fonts/Meslo
-unzip /tmp/Meslo.zip -d /usr/share/fonts/Meslo
+sudo unzip /tmp/Meslo.zip -d /usr/share/fonts/Meslo
 rm -f /tmp/Meslo.zip
 
 echo 'font_family MesloLGS Nerd Font' >> /home/$USER/.config/kitty/kitty.conf
