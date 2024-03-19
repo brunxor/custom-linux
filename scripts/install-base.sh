@@ -24,7 +24,7 @@ sudo apt-get install -y opera-stable google-chrome-stable
 
 # Repositorios de Microsoft Visual Studio Code
 curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/microsoft-archive-keyring.gpg >> /dev/null
-sudo echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list 
+echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list 
 sudo apt update
 sudo apt-get install -y code
 
@@ -32,7 +32,7 @@ sudo apt-get install -y code
 
 curl -fSsL https://archive.kali.org/archive-key.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/kali.gpg >> /dev/null
 
-sudo echo 'deb [signed-by=/usr/share/keyrings/kali.gpg] https://http.kali.org/kali kali-rolling main non-free contrib' > /etc/apt/sources.list.d/kali.list
+echo 'deb [signed-by=/usr/share/keyrings/kali.gpg] https://http.kali.org/kali kali-rolling main non-free contrib' | sudo tee /etc/apt/sources.list.d/kali.list
 
 # le indicamos que tiene menos prioridad que los paquetes de Debian
 sudo sh -c "echo 'Package: *'>/etc/apt/preferences.d/kali.pref; echo 'Pin: release a=kali-rolling'>>/etc/apt/preferences.d/kali.pref; echo 'Pin-Priority: 50'>>/etc/apt/preferences.d/kali.pref"
