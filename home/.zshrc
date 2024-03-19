@@ -224,7 +224,8 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
 
-    alias ls='ls --color=auto'
+    # Bruno Always "-a"
+    alias ls='ls -a --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -283,12 +284,14 @@ zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
+    # Bruno - always install
+    echo; zplug install
+    #printf "Install? [y/N]: "
+    #if read -q; then
+    #    echo; zplug install
+    #else
+    #    echo
+    #fi
 fi
 
 zplug load
@@ -296,3 +299,5 @@ zplug load
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Bruno - Alias $TERM for ssh using kitty
+echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"'
