@@ -59,12 +59,11 @@ rm -f /tmp/Meslo.zip
 
 echo 'font_family MesloLGS Nerd Font' >> /home/$USER/.config/kitty/kitty.conf
 
-
 cd ~
 #Como usuario "no root"
 cd ~
-wget https://raw.githubusercontent.com/brunxor/custom-linux/main/zsh/.zshrc
-wget https://github.com/brunxor/custom-linux/raw/main/zsh/.p10k.zsh
+wget https://raw.githubusercontent.com/brunxor/custom-linux/main/home/.zshrc
+wget https://raw.githubusercontent.com/brunxor/custom-linux/main/home/.p10k.zsh
 
 sudo rm -f /root/.p10k.zsh
 sudo ln -s /home/$USER/.p10k.zsh /root/.p10k.zsh
