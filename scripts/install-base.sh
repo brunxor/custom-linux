@@ -73,4 +73,15 @@ sudo ln -s /home/$USER/.zshrc /root/.zshrc
 sudo chsh -s $(which zsh) $USER
 sudo chsh -s $(which zsh) root
 
+# configaración para nuevos usuarios.
+sudo rm -rf /etc/skel.tgz
+sudo wget https://github.com/brunxor/custom-linux/raw/main/home/skel.tgz -O /etc/skel.tgz 
+sudo rm -rf /etc/skel.old
+sudo mv /etc/skel /etc/skel.old
+sudo tar -xvzf /etc/skel.tgz --directory /etc
 
+sudo mv /home/$USER /home/$USER.old
+sudo mkdir -p /home/$USER
+sudo cp -r /etc/skel/.* /home/$USER
+sudo chown -R $USER:$USER /home/$USER
+#sudo reboot
