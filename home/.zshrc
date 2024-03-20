@@ -300,4 +300,4 @@ zplug load
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Bruno - Alias $TERM for ssh using kitty
-echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"'
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
