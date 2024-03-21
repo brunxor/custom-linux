@@ -10,7 +10,7 @@ sudo sed -i "/ main/s/$/ contrib non-free/" /etc/apt/sources.list
 
 sudo apt-get update
 #sudo apt-get -yqq install net-tools vim vim-gtk3 iotop atop htop bmon curl wget pwgen lm-sensors pv tmux sudo gpg keepass2 dmidecode openssl bzip2 x11-xkb-utils python3-pip x11-apps x11-utils p7zip-full xfce4-whiskermenu-plugin  git screen apt-transport-https default-jdk icedtea-netx mugshot remmina swaks terminator openfortivpn network-manager-openvpn-gnome network-manager-openconnect-gnome network-manager-fortisslvpn-gnome mc ttf-mscorefonts-installer iptables sqlite3 gcc make cmake build-essential bat neofetch kitty aptitude gnupg
-sudo apt -yqq install net-tools vim vim-gtk3 iotop atop htop bmon curl wget pwgen lm-sensors pv sudo  dmidecode openssl bzip2 x11-xkb-utils python3-pip p7zip-full xfce4-whiskermenu-plugin git screen tmux apt-transport-https default-jdk mugshot iptables sqlite3 gcc make cmake build-essential bat neofetch kitty aptitude gpg locate zsh zplug batcat
+sudo apt -yqq install net-tools vim vim-gtk3 iotop atop htop bmon curl wget pwgen lm-sensors pv sudo  dmidecode openssl bzip2 x11-xkb-utils python3-pip p7zip-full xfce4-whiskermenu-plugin git screen tmux apt-transport-https default-jdk mugshot iptables sqlite3 gcc make cmake build-essential bat neofetch kitty aptitude gpg locate zsh zplug bat
 
 # Repositorios de Google Chrome
 curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
@@ -31,6 +31,12 @@ echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archiv
 
 sudo apt-get update
 sudo apt-get install -y opera-stable google-chrome-stable code
+
+# Instalar nvim - Ultima version (GIT)
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+ln -s /opt/nvim-linux64/bin/nvim /bin/nvim
 
 # Instalacion repositorios KALI
 
@@ -59,7 +65,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
 sudo mkdir -p /usr/share/fonts/Meslo
 sudo unzip /tmp/Meslo.zip -d /usr/share/fonts/Meslo
 rm -f /tmp/Meslo.zip
-echo 'font_family MesloLGS Nerd Font' >> /home/$USER/.config/kitty/kitty.conf
+#echo 'font_family MesloLGS Nerd Font' >> /home/$USER/.config/kitty/kitty.conf
 
 #Como usuario "no root"
 # Con la descarga de SKEL no es necesario:
