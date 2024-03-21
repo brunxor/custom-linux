@@ -1,12 +1,20 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/brunxor/bruno202403-pfsense2.ovpn]
-row=4
+[/home/brunxor/selected]
+row=3
 col=0
 
-[/home/brunxor/bruno20230316 (1).ovpn]
-row=3
+[/home/brunxor/hola.py]
+row=5
+col=0
+
+[/home/brunxor/custom-linux]
+row=6
+col=0
+
+[/home/brunxor/nvim-linux64.tar.gz]
+row=4
 col=0
 
 [Papelera]

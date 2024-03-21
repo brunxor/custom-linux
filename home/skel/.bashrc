@@ -112,3 +112,5 @@ if ! shopt -oq posix; then
   fi
 fi
 alias fix-opera='sudo ~root/.scripts/fix-opera.sh' # Opera fix HTML5 media
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
