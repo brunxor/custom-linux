@@ -36,7 +36,7 @@ sudo apt-get install -y opera-stable google-chrome-stable code
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
-ln -s /opt/nvim-linux64/bin/nvim /bin/nvim
+sudo ln -s /opt/nvim-linux64/bin/nvim /bin/nvim
 
 # Instalacion repositorios KALI
 
@@ -87,10 +87,15 @@ sudo mkdir -p /home/$USER
 sudo cp -r /etc/skel/.* /home/$USER
 sudo chown -R $USER:$USER /home/$USER
 
-sudo rm -f /root/.p10k.zsh
-sudo ln -s /home/$USER/.p10k.zsh /root/.p10k.zsh
-sudo rm -f /root/.zshrc
-sudo ln -s /home/$USER/.zshrc /root/.zshrc
+sudo mv /root /root.old
+sudo mkdir -p /root
+sudo cp -r /etc/skel/.* /root
+sudo chown -R root:root /root
+
+#sudo rm -f /root/.p10k.zsh
+#sudo ln -s /home/$USER/.p10k.zsh /root/.p10k.zsh
+#sudo rm -f /root/.zshrc
+#sudo ln -s /home/$USER/.zshrc /root/.zshrc
 
 echo 
 echo
