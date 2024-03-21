@@ -252,6 +252,8 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+#utilizar batcat por defecto:
+alias cat='batcat'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
@@ -275,11 +277,13 @@ fi
 source ~/.zplug/init.zsh
 
 # Make sure to use double quotes to prevent shell expansion
-#zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting"
 
 # Add a bunch more of your favorite packages!
 zplug "none9632/zsh-sudo"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
 
 
 # Install packages that have not been installed yet
