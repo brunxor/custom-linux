@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/brunxor/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/brunxor/.fzf/bin"
+if [[ ! "$PATH" == *${HOME}/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}${HOME}/.fzf/bin"
 fi
 
 eval "$(fzf --zsh)"

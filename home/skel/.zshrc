@@ -253,7 +253,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 #utilizar batcat por defecto:
-alias cat='batcat'
+alias bat='batcat'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
@@ -303,9 +303,7 @@ zplug load
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
 # Bruno - Alias $TERM for ssh using kitty
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
