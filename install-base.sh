@@ -88,6 +88,16 @@ inst_fuentes () {
     #echo 'font_family MesloLGS Nerd Font' >> /home/$USER/.config/kitty/kitty.conf
 }
 
+fzf () {
+    cd /usr/bin
+    sudo wget https://github.com/junegunn/fzf/releases/download/0.48.1/fzf-0.48.1-linux_amd64.tar.gz
+    sudo tar -xvzf fzf-0.48.1-linux_amd64.tar.gz
+    sudo rm -rf fzf-0.48.1-linux_amd64.tar.gz
+    cd -
+    echo 'eval "$(fzf --bash)"' >> ~/.bashrc
+    echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
+}
+
 default_shell () {
     sudo chsh -s $(which zsh) $USER
     sudo chsh -s $(which zsh) root
@@ -111,7 +121,7 @@ skel () {
     #Como usuario "no root"
     # Con la descarga de SKEL no es necesario:
     sudo rm -rf /etc/skel.tgz
-    sudo wget https://github.com/brunxor/custom-linux/raw/main/home/skel.tgz -O /etc/skel.tgz 
+    sudo wget https://github.com/brunxor/custom-linux/raw/main/skel.tgz -O /etc/skel.tgz 
     sudo rm -rf /etc/skel.old
     sudo mv /etc/skel /etc/skel.old
     sudo tar -xvzf /etc/skel.tgz --directory /etc
@@ -134,7 +144,7 @@ skel_update () {
     #Como usuario "no root"
     # Con la descarga de SKEL no es necesario:
     sudo rm -rf /etc/skel.tgz
-    sudo wget https://github.com/brunxor/custom-linux/raw/main/home/skel.tgz -O /etc/skel.tgz 
+    sudo wget https://github.com/brunxor/custom-linux/raw/main/skel.tgz -O /etc/skel.tgz 
     sudo rm -rf /etc/skel.old
     sudo mv /etc/skel /etc/skel.old
     sudo tar -xvzf /etc/skel.tgz --directory /etc
@@ -269,6 +279,16 @@ wizard () {
     read -p "Respuesta: " choice
      case $choice in
         S|s) inst_fuentes ;;
+        N|n) echo "has seleccionado NO" ;;
+        *) invalid_option ;;
+    esac
+    echo
+
+    echo
+    echo "Instalación de FZF"
+    read -p "Respuesta: " choice
+     case $choice in
+        S|s) fzf ;;
         N|n) echo "has seleccionado NO" ;;
         *) invalid_option ;;
     esac
