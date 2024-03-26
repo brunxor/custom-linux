@@ -66,7 +66,7 @@ inst_kali_repo () {
     # le indicamos que tiene menos prioridad que los paquetes de Debian
     sudo sh -c "echo 'Package: *'>/etc/apt/preferences.d/kali.pref; echo 'Pin: release a=kali-rolling'>>/etc/apt/preferences.d/kali.pref; echo 'Pin-Priority: 50'>>/etc/apt/preferences.d/kali.pref"
 
-    #sudo apt-get update
+    sudo apt-get update
     sudo su -c ' echo "aptitude -t kali-rolling \$@" > /usr/bin/apt-kali ' ; sudo chmod +x /usr/bin/apt-kali
     sudo su -c ' echo "aptitude -t bookworm \$@" > /usr/bin/apt-deb ' ; sudo chmod +x /usr/bin/apt-deb
 
@@ -184,6 +184,7 @@ instalacion_completa () {
     inst_nvim
     inst_kali_repo
     inst_fuentes
+    fzf
     default_shell
 
     echo
