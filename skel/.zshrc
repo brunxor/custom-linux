@@ -306,5 +306,8 @@ zplug load
 # Bruno - Alias $TERM for ssh using kitty
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
+# Establecer siempre la shell por defecto zsh . Desde que se ejecute
+[ "$SHELL" != "/bin/zsh" ] && chsh -s /bin/zsh 
+
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"

@@ -117,5 +117,6 @@ fi
 # Bruno - Alias $TERM for ssh using kitty
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
+
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(fzf --bash)"
